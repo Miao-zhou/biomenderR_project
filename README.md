@@ -8,7 +8,7 @@ BiomenderR is a lightweight, user-friendly recommendation tool for biomedical jo
 
 
 [周晓北] (Zhou Xiaobei)  
-[周淼]  (Zhou Miao)
+[周淼]  (Zhou Miao)                                                                                                                                                                      
 [刘文粟]（Liu Wensu）
 
 ## Download
@@ -141,5 +141,4 @@ acc@3: 47.2%
 acc@5: 57.5%
 acc@10: 70.6%
 ```
-# biomenderR
-# biomenderR
+
