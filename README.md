@@ -76,7 +76,7 @@ predict(model, newdata = "We proposed a xxx model for yyy analysis that can prov
 ```
 Here ab is the processed abstracts of the journals. In order to see this example intuitively, we visualized the prediction results. As shown below.
 
-"![Image text](https://raw.githubusercontent.com/Miao-zhou/Co-occurrence-analysis/main/simulation%20result.png)"
+"![Image text](https://github.com/Miao-zhou/biomenderR/blob/main/fig.png)"
 
 
 
