@@ -76,9 +76,7 @@ predict(model, newdata = "We proposed a xxx model for yyy analysis that can prov
 ```
 Here ab is the processed abstracts of the journals. In order to see this example intuitively, we visualized the prediction results. As shown below.
 
-"![Image text](https://github.com/Miao-zhou/biomenderR/blob/main/Fig.png)"
-
-
+"![Image text](https://raw.githubusercontent.com/Miao-zhou/biomenderR/main/Fig.png)"
 
 ##  Model training
 We also provide the process of model training. If you want to train a new model, you only change your training set and you can get your own model.
