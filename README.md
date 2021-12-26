@@ -17,32 +17,67 @@ The biomenderR and data can be downloaded from
  https://github.com/Miao-zhou/biomenderR.git
 ```
 
-
-
 ##  How to use biomenderR locally
 
 ###  Download the file "biomenderR.ruimtehol", this is the trained model. 
 We also provide codes that can load biomenderR and use biomenderR in R for the convenience of users. The code is in file "jpredict.R".
-
+```
+cd biomenderR 
+```
+BiomenderR needs to be loaded in the R software.
+### R  
+```
+source("jpredict.R") 
+```
 ###  A example of use biomenderR
 ```r
-x1 <- c("RNA-seq")
+x1 <- c("We proposed a xxx model for yyy analysis that can provide statistical inferences about zzz. The conceptual model framework and simulations are illustrated in the manuscript.")
 m <- "biomenderR.ruimtehol"
 jpredict(x1,k=10,m=m)
 ```
 Here, x1 is the text of your abstract, we just use a word instead of abstract. Then,we want to get top-10 journals, so we set k=10. If you want to get different numbers of results, you can set k=n (n is an integer).  The process of predicting results only take 3.036 seconds, results are showed as follow.
 
 ```text
-     [,1]             [,2]           [,3]
-[1,] "Genome-biology" "Theranostics" "Methods-(San-Diego,-Calif.)"
-     [,4]             [,5]            [,6]
-[1,] "BMC-genomics"   "Genomics"      "Nature-communications"
-     [,7]                               [,8]
-[1,] "Bioinformatics-(Oxford,-England)" "Genome-research"
-     [,9]                                           [,10]
-[1,] "Methods-in-molecular-biology-(Clifton,-N.J.)" "Frontiers-in-genetics"
+     [,1]                                      
+[1,] "Statistical-methods-in-medical-research"
+     [,2]
+     "Entropy-(Basel,-Switzerland)"
+     [,3]
+[1,] "Statistics-in-medicine"
+     [,4]
+[1,] "Computer-methods-in-biomechanics-and-biomedical-engineering"
+     [,5]
+[1,] "IEEE/ACM-transactions-on-computational-biology-and-bioinformatics"
+     [,6]
+[1,] "Journal-of-biomedical-informatics"
+     [,7]
+[1,] "Computer-methods-and-programs-in-biomedicine"
+     [,8]                                                                       
+[1,] "Philosophical-transactions.-Series-A,-Mathematical,-physical,-and-engineering-sciences"
+     [,9]                                                                       
+[1,] "Applied-radiation-and-isotopes-:-including-data,-instrumentation-and-methods-for-use-in-agriculture,-industry-and-medicine"
+     [,10]
+[1,] "Journal-of-computational-chemistry"
+
 ```
 From the predicting results, what we see is match with the x1.
+###  Predicting similar abstracts
+BiomenderR can not only recommend journals, but also find the most similar abstracts.
+**Prepare the data set of abstract**
+We take the journal "Statistical methods in medical research" as the example, we download the abstract and PMID of publications of Statistical methods in medical research from PubMed. The search strategy is as follows.
+```
+'("2010/01/01"[PDAT]:"2021/10/01"[PDAT]) AND "Statistical methods in medical research"[Journal]'
+```
+**Predicting the closest abstracts**
+Then, we can use biomenderR to predict the closest abstracts in R software. The code of R is as follows.
+```r
+model <- starspace_load_model("biomenderR.ruimtehol", method = "ruimtehol")
+predict(model, newdata = "We proposed a xxx model for yyy analysis that can provide statistical inferences about zzz. The conceptual model framework and simulations are illustrated in the manuscript.", basedoc=ab)
+```
+Here ab is the processed abstracts of the journals. In order to see this example intuitively, we visualized the prediction results. As shown below.
+
+"![Image text](https://raw.githubusercontent.com/Miao-zhou/Co-occurrence-analysis/main/simulation%20result.png)"
+
 
 
 ##  Model training
