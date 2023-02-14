@@ -1,8 +1,8 @@
 
 
-biomenderR
+biomenderR_project
 ==========
-BiomenderR is a lightweight, user-friendly recommendation tool for biomedical journals. It can recommend suitable journals for user as long as the user enters the abstract of the paper.
+BiomenderR projct is a lightweight, user-friendly recommendation framework for biomedical journals. It can recommend suitable journals for user as long as the user enters the abstract of the paper.
 ## Authors
 
 
