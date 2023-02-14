@@ -8,13 +8,19 @@ BiomenderR is a lightweight, user-friendly recommendation tool for biomedical jo
 
 
 [周晓北] (Zhou Xiaobei)  
-[周淼]  (Zhou Miao)                                                                                                                                                                      
+[周淼]  (Zhou Miao)                             
 [刘文粟]（Liu Wensu）
 
-## Download
-The biomenderR and data can be downloaded from
+## R package installation
+```r
+install.packages("devtools")
+devtools::install_github("xizhou/biomenderR")
 ```
- https://github.com/Miao-zhou/biomenderR.git
+
+## Web application programming interface
+a web application programming interface (API) is available on
+```
+https://beilab.goho.co/biomenderR_app
 ```
 
 ##  How to use biomenderR locally
